@@ -1,16 +1,19 @@
 name : Test the project
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
-      -main
+      - main
 
 jobs:
   build:
       strategy:
         matrix:
-          os : [ubuntu-latest,windows-latest,macos-latest]
-      runs-on : ${{ubuntu-latest}}
+          os : [ ubuntu-latest, windows-latest, macos-latest ]
+      runs-on : ${{ matrix.os }}
       steps:
         - name : Checkout of the repository
           uses : actions/checkout@v3.3.0

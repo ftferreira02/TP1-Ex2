@@ -1,3 +1,8 @@
+/**
+ * The Account class represents a bank account. Each bank account is associated with one or more {@link Client} (see
+ * also {@link Client#addAccount(Account...)}). Operations allowed are: withdrawal (when there is enough balance) or
+ * deposit.
+ */
 public class Account {
     private int id;
     private double balance;
